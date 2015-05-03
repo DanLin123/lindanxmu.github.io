@@ -65,6 +65,51 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/HexoBlog/2015/05/03/hello-world/" class="article-date">
+  <time datetime="2015-05-03T03:06:12.000Z" itemprop="datePublished">2015-05-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/HexoBlog/2015/05/03/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://lindanxmu.github.io/HexoBlog/2015/05/03/hello-world/" data-id="ci97wgm8700013d3665ebm4vb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-First-Blog" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/HexoBlog/2015/05/02/First-Blog/" class="article-date">
@@ -105,63 +150,20 @@
 <h3 id="package-json">package.json</h3><p>Define the hexo version and the dependencies.<a href="http://daringfireball.net/projects/markdown/syntax" target="_blank" rel="external">Markdown</a> is one of the dependency, so we can use Markfown to write blog.</p>
 <h3 id="source">source</h3><p>This is where you put your site’s content. Hexo ignores hidden files and files or folders whose names are prefixed with _ (underscore) - except the _posts folder. Renderable files (e.g. Markdown, HTML) will be processed and put into the public folder, while other files will simply be copied.</p>
 <p>Other folders are for more customized defined.</p>
-<p>A “hello-blog” blog comes along with this initial website. You can check it under <blogfolder>/source/_posts. hello-world.md is the Markdown file for the blog.<br>Now we can use command to translate Makrdown file to static webpages.<br>$ Hexo generate<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">The static page are generated under publish folder. </span><br><span class="line">![<span class="link_label">image of public folder</span>](<span class="link_url">img/public.png</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Start Hexo server, so that we can visit the static website on local</span><br><span class="line"><span class="code">```</span> bash</span><br><span class="line">$ Hexo server</span><br></pre></td></tr></table></figure></blogfolder></p>
+<p>A “hello-blog” blog comes along with this initial website. You can check it under <blogfolder>/source/_posts. hello-world.md is the Markdown file for the blog.<br>Now we can use command to translate Makrdown file to static webpages.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Hexo generate</span><br></pre></td></tr></table></figure></blogfolder></p>
+<p>The static page are generated under publish folder.<br><img src="http://lindanxmu.github.io/HexoBlog/img/public.png" alt="image of public folder"></p>
+<p>Start Hexo server, so that we can visit the static website on local<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ Hexo server</span><br></pre></td></tr></table></figure></p>
 <p>Now you can visit the website(default port is 4000): <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
 <p>The </p>
 <h2 id="Publish_it_to_github">Publish it to github</h2><h2 id="Use_Markdown_to_edit_the_content">Use Markdown to edit the content</h2>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lindanxmu.github.io/HexoBlog/2015/05/02/First-Blog/" data-id="ci97oqjrt0002bc36a5a4bheb" class="article-share-link">Share</a>
+      <a data-url="http://lindanxmu.github.io/HexoBlog/2015/05/02/First-Blog/" data-id="ci97wgm8a00023d3617kxl0sh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/HexoBlog/tags/Hexo/">Hexo</a></li></ul>
 
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/HexoBlog/2015/04/30/hello-world/" class="article-date">
-  <time datetime="2015-04-29T22:29:04.000Z" itemprop="datePublished">2015-04-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/HexoBlog/2015/04/30/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lindanxmu.github.io/HexoBlog/2015/04/30/hello-world/" data-id="ci97oqjrr0001bc36bavn5a5v" class="article-share-link">Share</a>
-      
-      
     </footer>
   </div>
   
@@ -205,7 +207,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/HexoBlog/archives/2015/05/">May 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/HexoBlog/archives/2015/04/">April 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/HexoBlog/archives/2015/05/">May 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -217,11 +219,11 @@
       <ul>
         
           <li>
-            <a href="/HexoBlog/2015/05/02/First-Blog/">Use hexo to create static blog</a>
+            <a href="/HexoBlog/2015/05/03/hello-world/">Hello World</a>
           </li>
         
           <li>
-            <a href="/HexoBlog/2015/04/30/hello-world/">Hello World</a>
+            <a href="/HexoBlog/2015/05/02/First-Blog/">Use hexo to create static blog</a>
           </li>
         
       </ul>
