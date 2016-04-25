@@ -3,20 +3,32 @@
 <head>
   <meta charset="utf-8">
   
-  <title>test | Hexo</title>
+  <title>Linux Privilege Management Command | Linda IT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
+  <meta name="description" content="Linux Privilege Management CommandShow groups and usersShow all groups1groups
+Show all usersThe /etc/passwd file is used to keep track of every registered user. It include information of 
+
+User name
+E">
 <meta property="og:type" content="article">
-<meta property="og:title" content="test">
+<meta property="og:title" content="Linux Privilege Management Command">
 <meta property="og:url" content="http://lindanxmu.github.io/2016/04/25/test/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description">
-<meta property="og:updated_time" content="2016-04-25T11:45:25.628Z">
+<meta property="og:site_name" content="Linda IT">
+<meta property="og:description" content="Linux Privilege Management CommandShow groups and usersShow all groups1groups
+Show all usersThe /etc/passwd file is used to keep track of every registered user. It include information of 
+
+User name
+E">
+<meta property="og:updated_time" content="2016-04-25T14:01:55.469Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="test">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Linux Privilege Management Command">
+<meta name="twitter:description" content="Linux Privilege Management CommandShow groups and usersShow all groups1groups
+Show all usersThe /etc/passwd file is used to keep track of every registered user. It include information of 
+
+User name
+E">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Linda IT" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -37,7 +49,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Linda IT</a>
       </h1>
       
     </div>
@@ -52,9 +64,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://lindanxmu.github.io"></form>
@@ -77,7 +89,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      test
+      Linux Privilege Management Command
     </h1>
   
 
@@ -85,13 +97,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Linux-Privilege-Management-Command"><a href="#Linux-Privilege-Management-Command" class="headerlink" title="Linux Privilege Management Command"></a>Linux Privilege Management Command</h1><h2 id="Show-groups-and-users"><a href="#Show-groups-and-users" class="headerlink" title="Show groups and users"></a>Show groups and users</h2><p><strong>Show all groups</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups</span><br></pre></td></tr></table></figure></p>
+<p><strong>Show all users</strong><br>The /etc/passwd file is used to keep track of every registered user. It include information of </p>
+<ul>
+<li>User name</li>
+<li>Encrypted password</li>
+<li>User ID number (UID)</li>
+<li>User’s group ID number (GID)</li>
+<li>Full name of the user (GECOS)</li>
+<li>User home directory</li>
+<li>Login shell<br>Use cut to get the first column of the file, which is the users<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d: -f1 /etc/passwd</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>Show user belong to which groups</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups yourUserName</span><br></pre></td></tr></table></figure></p>
+<p><strong>Change user group</strong><br>Add primary group<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -g groupName userName</span><br></pre></td></tr></table></figure></p>
+<p>Add secondary group<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G groupName userName</span><br></pre></td></tr></table></figure></p>
+<p>check <a href="http://ubuntuforums.org/showthread.php?t=1688174" target="_blank" rel="external">http://ubuntuforums.org/showthread.php?t=1688174</a> for diff of primary and secondary group</p>
+<h2 id="Change-file-privilege"><a href="#Change-file-privilege" class="headerlink" title="Change file privilege"></a>Change file privilege</h2><p><strong>Change file owner</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown username:group directory</span><br></pre></td></tr></table></figure></p>
+<p><strong>Show File permssion</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l some_file</span><br></pre></td></tr></table></figure></p>
+<p><strong>Change file permission</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod mode file </span><br><span class="line">chmod 644 file.htm  (example)</span><br></pre></td></tr></table></figure></p>
+<p>read:4  write:2  excute:1<br>Example set the permissions of file.htm to “owner can read and write; group members can read only; others can read only”.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lindanxmu.github.io/2016/04/25/test/" data-id="cinfygu6b0000zio26yyyq565" class="article-share-link">Share</a>
+      <a data-url="http://lindanxmu.github.io/2016/04/25/test/" data-id="cing0ylb00001pao2s7ummq4r" class="article-share-link">Partager</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
     </footer>
   </div>
   
@@ -100,7 +134,7 @@
   
   
     <a href="/2016/04/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
+      <strong class="article-nav-caption">Ancien</strong>
       <div class="article-nav-title">Hello World</div>
     </a>
   
@@ -117,9 +151,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/">linux</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/linux/" style="font-size: 10px;">linux</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -133,12 +181,12 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
         
           <li>
-            <a href="/2016/04/25/test/">test</a>
+            <a href="/2016/04/25/test/">Linux Privilege Management Command</a>
           </li>
         
           <li>
@@ -158,7 +206,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2016 DLin<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
