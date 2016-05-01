@@ -3,17 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Linda IT</title>
+  <title>combineByKey action in spark | Linda IT</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Linda IT">
-<meta property="og:url" content="http://lindanxmu.github.io/index.html">
+  <meta name="description" content="combineByKey is used for processing key pair value in spark. The output rdd can be diffrent format of input rdd. Here is an exmaple to expain how to calculte average value for each key with combineByK">
+<meta property="og:type" content="article">
+<meta property="og:title" content="combineByKey action in spark">
+<meta property="og:url" content="http://lindanxmu.github.io/2016/05/01/combineByKey-action-in-spark/index.html">
 <meta property="og:site_name" content="Linda IT">
-<meta property="og:description">
+<meta property="og:description" content="combineByKey is used for processing key pair value in spark. The output rdd can be diffrent format of input rdd. Here is an exmaple to expain how to calculte average value for each key with combineByK">
+<meta property="og:updated_time" content="2016-05-01T04:15:56.084Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Linda IT">
-<meta name="twitter:description">
+<meta name="twitter:title" content="combineByKey action in spark">
+<meta name="twitter:description" content="combineByKey is used for processing key pair value in spark. The output rdd can be diffrent format of input rdd. Here is an exmaple to expain how to calculte average value for each key with combineByK">
   
     <link rel="alternate" href="/atom.xml" title="Linda IT" type="application/atom+xml">
   
@@ -64,9 +65,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-combineByKey-action-in-spark" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-combineByKey-action-in-spark" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/05/01/combineByKey-action-in-spark/" class="article-date">
   <time datetime="2016-05-01T00:16:26.000Z" itemprop="datePublished">2016-05-01</time>
@@ -79,8 +78,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/01/combineByKey-action-in-spark/">combineByKey action in spark</a>
+    <h1 class="article-title" itemprop="name">
+      combineByKey action in spark
     </h1>
   
 
@@ -108,104 +107,19 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-data-storage-in-spark" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/29/data-storage-in-spark/" class="article-date">
-  <time datetime="2016-04-29T12:31:06.000Z" itemprop="datePublished">2016-04-29</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/29/data-storage-in-spark/">data storage in spark</a>
-    </h1>
+    <a href="/2016/04/29/data-storage-in-spark/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">data storage in spark</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lindanxmu.github.io/2016/04/29/data-storage-in-spark/" data-id="cinnuvmzu0003hmo2d4ojwhx7" class="article-share-link">Partager</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/25/test/" class="article-date">
-  <time datetime="2016-04-25T11:45:25.000Z" itemprop="datePublished">2016-04-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/25/test/">Linux Privilege Management Command</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Show-groups-and-users"><a href="#Show-groups-and-users" class="headerlink" title="Show groups and users"></a>Show groups and users</h2><p><strong>Show all groups</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups</span><br></pre></td></tr></table></figure></p>
-<p><strong>Show all users</strong><br>The /etc/passwd file is used to keep track of every registered user. It include information of </p>
-<ul>
-<li>User name</li>
-<li>Encrypted password</li>
-<li>User ID number (UID)</li>
-<li>User’s group ID number (GID)</li>
-<li>Full name of the user (GECOS)</li>
-<li>User home directory</li>
-<li>Login shell<br>Use cut to get the first column of the file, which is the users<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cut -d: -f1 /etc/passwd</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>Show user belong to which groups</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">groups yourUserName</span><br></pre></td></tr></table></figure></p>
-<p><strong>Change user group</strong><br>Add primary group<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -g groupName userName</span><br></pre></td></tr></table></figure></p>
-<p>Add secondary group<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">usermod -G groupName userName</span><br></pre></td></tr></table></figure></p>
-<p>check <a href="http://ubuntuforums.org/showthread.php?t=1688174" target="_blank" rel="external">http://ubuntuforums.org/showthread.php?t=1688174</a> for diff of primary and secondary group</p>
-<h2 id="Change-file-privilege"><a href="#Change-file-privilege" class="headerlink" title="Change file privilege"></a>Change file privilege</h2><p><strong>Change file owner</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chown username:group directory</span><br></pre></td></tr></table></figure></p>
-<p><strong>Show File permssion</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -l some_file</span><br></pre></td></tr></table></figure></p>
-<p><strong>Change file permission</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod mode file </span><br><span class="line">chmod 644 file.htm  (example)</span><br></pre></td></tr></table></figure></p>
-<p>read:4  write:2  excute:1<br>Example set the permissions of file.htm to “owner can read and write; group members can read only; others can read only”.</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://lindanxmu.github.io/2016/04/25/test/" data-id="cinnuvmzo0002hmo2xg57akz5" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 </section>
         
