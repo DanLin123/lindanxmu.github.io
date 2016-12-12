@@ -5,12 +5,52 @@ td div {
 	border:1px solid grey;
 }
 
-.button {
-	text-align: center;
-}
-
 table{
 	margin-top: 10px;
 	margin-left: auto;
     margin-right: auto;
 }
+
+.button{
+	text-align: center;
+}
+
+.note {
+	margin-left: auto;
+    margin-right: auto;
+	width: 800px;
+}
+
+
+
+.play > div{
+	width: 50px;
+	height: 50px;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+	float: left;
+	margin: 10px;
+}
+
+.play1 > div {
+	background: red;
+}
+
+.play2 > div {
+	background: blue;
+}
+
+.play1 > p{
+	float: left;
+}
+
+.play2 > p{
+	float: left;
+	clear: left;
+}
+
+
+
+
+
