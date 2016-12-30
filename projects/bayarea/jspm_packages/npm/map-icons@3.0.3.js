@@ -1,0 +1,1 @@
+module.exports = require("npm:map-icons@3.0.3/dist/js/map-icons.min.js");

@@ -71,5 +71,6 @@
   "github:twbs/bootstrap@3.3.7": {
     "jquery": "jspm:jquery"
   },
-  "github:systemjs/plugin-css@0.1.32": {}
+  "github:systemjs/plugin-css@0.1.32": {},
+  "npm:map-icons@3.0.3": {}
 }
