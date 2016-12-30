@@ -86,9 +86,11 @@ $(function(){
 		        // create marker
 		        ko.utils.arrayForEach(locations, 
 		        	location => markers.push(new Marker({
-		            	position: new google.maps.LatLng(location.latitude, location.longitude),
-		            	map_icon_label: getIconLabel(location.type),
-						icon: getIcon(location.type),
+		            	position: new google.maps.LatLng(
+		            		ko.unwrap(location.latitude), 
+		            		ko.unwrap(location.longitude)),
+		            	map_icon_label: getIconLabel(ko.unwrap(location.type)),
+						icon: getIcon(ko.unwrap(location.type)),
 		            	map: map
 		          	}))
 		        )
