@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #map {
+        height: 800px;
+        width: 100%;
+       }
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-header">
+        <h1>My Life in Bay Area</h1>      
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 col-md-2">
+            <input ype="text" class="form-control" placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
+            <br>
+            <ul class="list-group" data-bind="template: {name:'location', foreach:locations}"></ul>
+        </div>
+
+        <div class="col-sm-10 col-md-10">
+          <div id="map" data-bind="googlemap: { locations: locations, center: center, zoom: zoom}">
+          </div>
+      </div>
+    </div>
+
+     <script type="text/html" id="location">
+        <li class="list-group-item list-group-item-action list-group-item-info" 
+          data-bind="text: name"></li>
+    </script>
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaFNbgcspHafJfbTRVtXVYXXEVbTCZAxE">
+    </script>
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+      System.import('lib/main.js');
+    </script>
+  </body>
+</html>
