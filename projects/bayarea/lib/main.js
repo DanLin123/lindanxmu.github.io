@@ -30,7 +30,8 @@ $(function(){
       
 		        var mapOptions = {
 		        	zoom: zoom,
-		        	center:  new google.maps.LatLng(center.latitude, center.longitude),
+		        	center:  new google.maps.LatLng(
+		        		ko.unwrap(center.latitude), ko.unwrap(center.longitude)),
 		        	mapTypeId: google.maps.MapTypeId.ROADMAP
 		        };
 		        //create map
@@ -42,7 +43,8 @@ $(function(){
 		    	markers.map((marker) => marker.setMap(null));
 
 		    	var value = ko.unwrap(valueAccessor()),
-		        	locations = ko.unwrap(value.locations);
+		        	locations = ko.unwrap(value.locations),
+		        	center = ko.unwrap(value.center);
 
 		        // create marker
 		        ko.utils.arrayForEach(locations, 
@@ -55,6 +57,11 @@ $(function(){
 		            	map: map
 		          	}))
 		        )
+
+		        // update center
+		         var newCenter = new google.maps.LatLng(
+		        		ko.unwrap(center.latitude), ko.unwrap(center.longitude))
+				 map.panTo(newCenter);
 	    	}
     	}
 	};
@@ -70,7 +77,12 @@ $(function(){
     	}));
 
 		self.zoom = ko.observable(model.zoom);
-		self.center = ko.observable(model.center);
+		self.center = ko.computed(function() {
+			return {
+				latitude: ko.observable(model.center.latitude),
+				longitude: ko.observable(model.center.longitude)
+			}
+		});
 		self.showVisited = ko.observable(true);
 		self.showToVisit = ko.observable(true);
 		self.query = ko.observable("");
@@ -97,7 +109,13 @@ $(function(){
     		}
     		
     		return res;
-    	})
+    	});
+
+    	self.centralize = function(value) {
+    		self.center().latitude(value.latitude());
+    		self.center().longitude(value.longitude());
+    	}
+
 	};
 
 	createHandler();

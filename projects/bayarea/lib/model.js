@@ -59,6 +59,16 @@ var model = {
             strokeColor: '',
             strokeWeight: 0
         }
+      },
+      food: {
+        label: 'map-icon-restaurant',
+        icon: {
+            path: SHIELD,
+            fillColor: '#D01F4D',
+            fillOpacity: 1,
+            strokeColor: '',
+            strokeWeight: 0
+        }
       }
     },
 	locations: [
@@ -77,9 +87,11 @@ var model = {
         {name: 'Levi\'s Stadium', latitude: 37.402317, longitude: -121.96899539999998,
             type: 'stadium', visit: true},
         {name: 'San Jose Flea Market', latitude: 37.368936, longitude: -121.8789875,
-            type: 'market', visit: false}
+            type: 'market', visit: false},
+        {name: 'Bar Crudo', latitude: 37.77568309999999, longitude: -122.4382114,
+            type: 'food', visit: false}
             
 	],
-	zoom: 12,
+	zoom: 10,
 	center: {latitude: 37.3986234 , longitude: -121.94488590000003}
 }
