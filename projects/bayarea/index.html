@@ -16,13 +16,25 @@
 
       <div class="row">
         <div class="col-sm-2 col-md-2">
+            <div class="checkbox">
+              <label><input type="checkbox" 
+              data-bind="checked: showVisited, valueUpdate: 'click'" value="">
+              show visited</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox"  
+              data-bind="checked: showToVisit, valueUpdate: 'click'" >
+              show to visited</label>
+            </div>
+
             <input ype="text" class="form-control" placeholder="Search…" type="search" data-bind="value: query, valueUpdate: 'keyup'" autocomplete="off">
             <br>
-            <ul class="list-group" data-bind="template: {name:'location', foreach:locations}"></ul>
+            <ul class="list-group" data-bind="template: {name:'location', foreach:filteredPos}"></ul>
+           
         </div>
 
         <div class="col-sm-10 col-md-10">
-          <div id="map" data-bind="googlemap: { locations: locations, center: center, zoom: zoom}">
+          <div id="map" data-bind="googlemap: { locations: filteredPos, center: center, zoom: zoom}">
           </div>
       </div>
     </div>

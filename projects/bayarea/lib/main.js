@@ -3,59 +3,20 @@ import ko from 'knockout';
 import 'bootstrap';
 import 'bootstrap/css/bootstrap.css!';
 import 'map-icons/dist/css/map-icons.css!'
+import model from './model'
+
 
 $(function(){
 	var createHandler = function(){
-	    const ICONS = {
-	   	  defalt: {
-	   	  	label: 'map-icon-map-pin',
-	        icon: {
-	   	  		path: MAP_PIN,
-				fillColor: '#1998F7',
-				fillOpacity: 1,
-				strokeColor: '',
-				strokeWeight: 0
-	   	  	}
-	   	  },
-	      home: {
-	        label: 'map-icon-map-pin',
-	        icon: {
-	   	  		path: MAP_PIN,
-				fillColor: '#1998F7',
-				fillOpacity: 1,
-				strokeColor: '',
-				strokeWeight: 0
-	   	  	}
-	      },
-	      glocery: {
-	        label: 'map-icon-grocery-or-supermarket',
-	        icon: {
-	   	  		path: SQUARE,
-				fillColor: '#00CCBB',
-				fillOpacity: 1,
-				strokeColor: '',
-				strokeWeight: 0
-	   	  	}
-	      },
-	      cafe: {
-	        label: 'map-icon-cafe',
-	        icon: {
-	   	  		path: ROUTE,
-				fillColor: '#B3897B',
-				fillOpacity: 1,
-				strokeColor: '',
-				strokeWeight: 0
-	   	  	}
-	      }
-	    };
-
 	    var getIconLabel = function(type) {
-	    	let icon = type in ICONS ?  ICONS[type].label : ICONS['defalt'].label;
+	    	let icons = model.icons;
+	    	let icon = type in icons ?  icons[type].label : icons['defalt'].label;
 	    	return `<span class="map-icon ${icon}"></span>`;
 	    }
 
 	    var getIcon = function(type) {
-	    	return (type in ICONS) ?  ICONS[type].icon : ICONS['defalt'].icon;
+	    	let icons = model.icons;
+	    	return (type in icons) ?  icons[type].icon : icons['defalt'].icon;
 	    }
 
 		var map;
@@ -98,46 +59,47 @@ $(function(){
     	}
 	};
 
-    var model = {
-    	locations: [
-    		{name: 'Home', latitude:  37.3986234 , longitude: -121.94488590000003 , 
-    			type: "home"},
-        	{name: 'Safeway', latitude: 37.394634, longitude: -121.94767999999999, 
-        		type: 'glocery'},
-        	{name: 'Walmart', latitude: 37.39000850000001, longitude: -121.98550219999998,
-        		type:'glocery'},
-        	{name: 'Sprouts Farmers Market', latitude: 37.3667316, longitude: -122.0308412,
-        		type: 'glocery'},
-        	{name: 'Philz Coffee', latitude: 37.39000850000001, longitude: -122.03171250000003,
-        		type:'cafe'},
-        	{name: 'Sunnyvale Library', latitude: 37.37189800000001, longitude: -122.03891699999997,
-        		type: 'lib'}
-    	],
-    	zoom: 12,
-    	center: {latitude: 37.3986234 , longitude: -121.94488590000003}
-    }
-
-    var vm = {
-		locations: ko.observableArray(ko.utils.arrayMap(model.locations, function(item) {
+    var vm = function() {
+    	let self = this;
+		self.locations =  ko.observableArray(ko.utils.arrayMap(model.locations, function(item) {
         	return { name: ko.observable(item.name), 
         			latitude: ko.observable(item.latitude),
         			longitude: ko.observable(item.longitude),
-        			type: ko.observable(item.type)};
-    	})),
-		zoom: ko.observable(model.zoom),
-		center: ko.observable(model.center),
-		query: ko.observable(""),
-		search: function(value) {
-		    vm.locations.removeAll();
-		    for(var loc of model.locations) {
-		    	if(loc.name.toLowerCase().indexOf(value.toLowerCase()) >= 0) {
-		        	vm.locations.push(loc);
-		      	}
-		  	}
-    	}
-	}
+        			type: ko.observable(item.type),
+        			visit: ko.observable(item.visit)};
+    	}));
+
+		self.zoom = ko.observable(model.zoom);
+		self.center = ko.observable(model.center);
+		self.showVisited = ko.observable(true);
+		self.showToVisit = ko.observable(true);
+		self.query = ko.observable("");
+    	self.filteredPos = ko.computed(function() {
+    		let res = self.locations();
+
+    		if(self.query().length > 0) {
+    			res = ko.utils.arrayFilter(res, function(loc) {
+    				return ko.utils.stringStartsWith(loc.name().toLowerCase(), 
+    					self.query().toLowerCase());
+    			});
+    		}
+
+    		if(!self.showVisited()) {
+    			res = ko.utils.arrayFilter(res, function(loc) {
+    				return !loc.visit();
+    			});
+    		}
+
+    		if(!self.showToVisit()) {
+    			res = ko.utils.arrayFilter(res, function(loc) {
+    				return loc.visit();
+    			});
+    		}
+    		
+    		return res;
+    	})
+	};
 
 	createHandler();
-	vm.query.subscribe(vm.search);
-	ko.applyBindings(vm);
+	ko.applyBindings(new vm());
 });
